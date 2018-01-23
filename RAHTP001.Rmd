@@ -1,0 +1,56 @@
+---
+title: "Week 3 developing Data Product"
+author: "RAHTP001"
+date: "24 January 2018"
+output: 
+  ioslides_presentation: 
+    keep_md: yes
+    widescreen: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(datasets)
+data("iris")
+```
+
+
+## Iris Data set
+```{r,comment=""}
+head(iris)
+```
+*Species Included in dataset*
+- setosa
+- versicolor
+- virginica
+
+This Dataset having total 150 observation and 5 veriables listed as below
+1) Sepal Length,
+2) Sepal Width,
+3) Petal Length,
+4) Petal Width,
+5) Species.
+
+## Summary of iris data set
+
+```{r cars, echo = TRUE,comment=""}
+summary(iris)
+```
+
+## 3D PLot with plot_ly
+
+```{r iris,include=FALSE}
+library(plotly)
+pwid<-iris$Petal.Width
+plen<-iris$Petal.Length
+swid<-iris$Sepal.Width
+```
+
+x=Petal.Width
+y=Petal.Length
+z=Sepal.Width
+```{r,cache=TRUE}
+plot_ly(data = iris,x=pwid,y=plen,z=swid,type="scatter3d",mode = "markers",
+        color= pwid)
+```
+
